@@ -4,6 +4,14 @@ use Lukaswhite\Directory\Directory;
 
 class DirectoryTest extends \PHPUnit\Framework\TestCase
 {
+    protected function setUp( )
+    {
+        $directory = new Directory( sys_get_temp_dir( ) . '/lukaswhite-directory' );
+        if ( $directory->exists( ) ) {
+            $directory->delete( );
+        }
+    }
+
     public function testExists( )
     {
         $directory = new Directory( __DIR__ .'/fixtures/one' );
