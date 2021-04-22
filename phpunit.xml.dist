@@ -7,8 +7,7 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="true"
-         syntaxCheck="false">
+         stopOnFailure="true">
 
     <testsuites>
         <testsuite name="Business Hours Test Suite">
@@ -16,23 +15,14 @@
         </testsuite>
     </testsuites>
 
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">src</directory>
-        </whitelist>
-    </filter>
 
-    <filter>
-        <blacklist>
-            <directory>vendor</directory>
-        </blacklist>
-    </filter>
-
-    <logging>
-        <log type="coverage-html" target="./log/codeCoverage" charset="UTF-8"
-             yui="true" highlight="true" lowUpperBound="50" highLowerBound="80"
-             showUncoveredFiles="false" />
-        <!-- <log type="testdox-html" target="./log/testdox.html" /> -->
-    </logging>
+    <coverage cacheDirectory="/log"
+              includeUncoveredFiles="true"
+              processUncoveredFiles="true"
+              pathCoverage="false"
+              ignoreDeprecatedCodeUnits="true"
+              disableCodeCoverageIgnore="true">
+        <!-- ... -->
+    </coverage>
 
 </phpunit>

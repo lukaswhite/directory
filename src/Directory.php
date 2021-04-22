@@ -2,6 +2,8 @@
 
 namespace Lukaswhite\Directory;
 
+use resource;
+
 /**
  * Class Directory
  *
